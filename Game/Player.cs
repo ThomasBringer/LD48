@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     [SerializeField] Color detectedColor;
     [SerializeField] Color foundColor;
 
-    bool controllable = true;
+    [HideInInspector] public bool controllable = true;
 
     [SerializeField] GameObject shovel;
     [SerializeField] GameObject dirtPrefab;

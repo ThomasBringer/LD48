@@ -21,6 +21,12 @@ public class FallingPillar : MonoBehaviour
     {
         if (!fallen)
         {
+            if (!FindObjectOfType<Player>().controllable)
+            {
+                fallen = true;
+                return;
+            }
+
             fallen = true;
             Quaternion savedRot = animChild.rotation;
 

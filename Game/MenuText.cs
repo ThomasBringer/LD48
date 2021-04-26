@@ -5,6 +5,8 @@ using TMPro;
 
 public class MenuText : MonoBehaviour
 {
+    [SerializeField] GameObject smPrefab;
+
     TextMeshProUGUI uiText;
 
     void OnEnable()
@@ -13,7 +15,8 @@ public class MenuText : MonoBehaviour
 
         string text = Save.menuText;
 
-        if (text != null) uiText.text = text;
+        if (text == null) Instantiate(smPrefab);
+        else uiText.text = text;
 
         // string text = PlayerPrefs.GetString("MenuText", "");
 
